@@ -1,0 +1,1021 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+}
+
+a {
+  cursor: pointer;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+html {
+  line-height: 1;
+}
+
+body {
+  font-family: Noto Serif JP,游明朝,YuMincho,Hiragino Mincho ProN W3,ヒラギノ明朝 ProN W3,Hiragino Mincho ProN,serif;
+  background: #000;
+  color: #fff;
+  -webkit-text-size-adjust: 100%;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+#container, section {
+  position: relative;
+}
+
+#container {
+  z-index: 100;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  width: 640px;
+  margin: auto;
+  position: relative;
+}
+
+header {
+  background: url(https://meltyblood.typelumina.com/resources/img/common/header_bg_c5fc56ea57d029a3d1849c0cd839a4cd.jpg) top no-repeat;
+  height: 90px;
+  position: fixed;
+  width: 100%;
+  z-index: 101;
+  transform: translateY(-90px);
+  transition: .2s;
+}
+
+header.show {
+  transform: translate(0);
+}
+
+header .wrapper {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 100%;
+}
+
+header .header-logo {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/common/header_logo_9b38a955e5caecf3fd0e9c3f6d0ff0a7.png);
+  width: 281px;
+  height: 104px;
+  margin-top: 13px;
+}
+
+header .product-info-btn {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/common/header_pre_order_btn_505c123bfb6b2538c440fed0643bf8a5.png) no-repeat;
+  width: 316px;
+  height: 90px;
+  /* display: block; */
+  margin-left: -41px;
+}
+
+header .menu-btn {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/common/header_menu_btn_b9d4e2b2575f005c12579ffcc2d16a0d.png);
+  width: 78px;
+  height: 73px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+}
+
+header .menu-btn.opened {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/common/header_close_btn_9e3cbf9ff0ad96da560b50cd38d97212.png);
+  width: 78px;
+  height: 73px;
+}
+
+header .nav-box {
+  /* display: none; */
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, .9);
+  overflow: auto;
+  top: 0;
+  transition: opacity .5s ease;
+  animation: s .5s ease;
+}
+
+@keyframes s {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.nav-box .nav-logo {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/common/menu_logo_6fac23da69fe8d49acfa8fc5aa235ad6.png) top no-repeat;
+  width: 404px;
+  height: 122px;
+  display: block;
+}
+
+.nav-box .nav {
+  margin: 27px 0 0 24px;
+}
+
+.nav-box .nav li {
+  position: relative;
+  margin-bottom: -12px;
+}
+
+.nav-box .nav li.new::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 83px;
+  height: 41px;
+  top: 0;
+  left: 45px;
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/common/new_79f3c77f31d040edd2114fd6fe0e6eef.png) 0 0 no-repeat;
+}
+
+.nav-box .nav li a {
+  display: block;
+  text-decoration: none;
+}
+
+.nav-box .nav li:first-child a {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/common/header_nav_home_deddf245a4467eb43a6acf42180f2254.png);
+  width: 221px;
+  height: 104px;
+}
+
+.nav-box .nav li:nth-child(2) a {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/common/header_nav_character_ceb1b6b24bfe79975bace2a74eb04af4.png);
+  width: 391px;
+  height: 103px;
+}
+
+.nav-box .nav li:nth-child(3) a {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/common/header_nav_htp_af7bef9dc50e9339d928cec61fe0d42f.png);
+  width: 425px;
+  height: 104px;
+}
+
+.nav-box .nav li:nth-child(4) a {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/common/header_nav_event_2d5990bb1b68692b6869781d7772922e.png);
+  width: 234px;
+  height: 104px;
+}
+
+.nav-box .nav li:nth-child(5) a {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/common/header_nav_fankit_fddaf035957b4ba9358d3588f30f542f.png);
+  width: 252px;
+  height: 104px;
+}
+
+.nav-box .nav li:nth-child(6) a {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/common/header_nav_faq_d94c0da33e426b1d430d6da07d9ce38b.png);
+  width: 163px;
+  height: 104px;
+}
+
+.nav-box .nav li:nth-child(7) {
+  margin: 14px 0 0 60px;
+}
+
+.nav-box .nav li:nth-child(7) a {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/common/header_nav_product_info_ebb184e233abc2808bef7e70a15918e1.png);
+  width: 449px;
+  height: 182px;
+}
+
+.nav-box .sns-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 9px;
+}
+
+.nav-box .sns-box a {
+  margin: 0 17px;
+}
+
+.nav-box .sns-box .sns-twi-btn {
+  background: url(https://meltyblood.typelumina.com/resources/img/common/sns_twitter_btn_ce13f5f7ba98efec24f652ff23856ca9.png);
+  width: 52px;
+  height: 52px;
+}
+
+.nav-box .sns-box .sns-fb-btn {
+  background: url(https://meltyblood.typelumina.com/resources/img/common/sns_facebook_btn_3a46c0cec37bedd46a9e074db27a4cee.png);
+  width: 53px;
+  height: 53px;
+}
+
+.nav-box .sns-box .sns-line-btn {
+  background: url(https://meltyblood.typelumina.com/resources/img/common/sns_line_btn_972417c0dfa7bce9d83aead929922f0d.png);
+  width: 51px;
+  height: 51px;
+}
+
+.logo-lang-box {
+  background: rgba(0, 0, 0, .6);
+  height: 40px;
+  position: absolute;
+  width: 100%;
+  top: 90px;
+  z-index: 99;
+  transform: translateY(-180px);
+  transition: .2s .1s;
+}
+
+.logo-lang-box.show {
+  transform: translate(0);
+}
+
+.logo-lang-box .wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo-lang-box .logo-box {
+  margin-left: 13px;
+}
+
+.logo-lang-box .logo-box img {
+  margin-right: 17px;
+}
+
+.logo-lang-box .logo-box img:nth-child(3) {
+  margin-right: 21px;
+}
+
+.logo-lang-box .logo-box img:last-child {
+  margin-right: 0;
+}
+
+.logo-lang-box .lang-box {
+  position: relative;
+  margin: 0 12px 0 auto;
+}
+
+.logo-lang-box .lang-box .change-lang {
+  background: url(https://meltyblood.typelumina.com/resources/img/common/header_lang_btn_9b6e3d093e0815b764a0b14837481eab.png);
+  width: 115px;
+  height: 42px;
+  display: block;
+}
+
+.logo-lang-box .lang-box .lang-list {
+  position: absolute;
+  top: 42px;
+  right: 7px;
+  width: 160px;
+  overflow: hidden;
+  transition: .3s;
+  height: 0;
+}
+
+.logo-lang-box .lang-box .lang-list.opened {
+  height: 125px;
+}
+
+.logo-lang-box .lang-box .lang-list li {
+  margin-bottom: 1px;
+}
+
+.logo-lang-box .lang-box .lang-list li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background: rgba(0, 0, 0, .6);
+  color: #fff;
+  padding: 12px 0;
+}
+
+.fv {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/top/bg1_5df43263d96aca6fb48bec4777445db1.jpg) top no-repeat #00021f;
+  margin-top: 90px;
+  padding-bottom: 35px;
+}
+
+.fv h1 {
+  text-align: center;
+  padding-top: 331px;
+}
+
+.fv .fv-release-date {
+  text-align: center;
+  margin-top: -22px;
+}
+
+.fv .limited-banner {
+  position: absolute;
+  top: 583px;
+  right: 0;
+}
+
+.fv .spec {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/top/fv_spec_142bcadfda6556ef7862a0ba108e6540.png);
+  width: 569px;
+  height: 261px;
+  margin-top: 99px;
+  padding-top: 1px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, td, th {
+  text-align: left;
+  font-weight: 400;
+  vertical-align: middle;
+}
+
+.fv .spec table {
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 8px 0 0 60px;
+}
+
+.fv .spec table tr th {
+  vertical-align: top;
+  width: 90px;
+}
+
+.fv .spec table tr:nth-of-type(2) td {
+  line-height: .5;
+}
+
+.fv .spec table tr:nth-of-type(5) td span,
+.fv .spec table tr:nth-of-type(6) td span {
+  display: block;
+  font-size: 12px;
+  line-height: .5;
+  padding-bottom: 5px;
+}
+
+.fv .spec table tr td span {
+  margin: 0 3px;
+}
+
+.fv .timeline {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/top/fv_timeline_01606942a5480803f78181f952717582.png);
+  width: 573px;
+  height: 230px;
+  margin: 0 0 0 auto;
+  padding-top: 1px;
+}
+
+.fv .timeline .timeline-box {
+  margin: 11px 0 0 85px;
+  width: 475px;
+  height: 205px;
+}
+
+.fv .bottom-bnr-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.fv .bottom-bnr-box a {
+  margin: 0 8px;
+}
+
+main {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/top/bg2_a59c8b3969ef4f62df2c12aed2278c13.jpg) top no-repeat;
+  overflow: hidden;
+  position: relative;
+}
+
+main .line-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+main .line-box div {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  box-shadow: 0 0 20px #3792f9;
+  pointer-events: none;
+}
+
+main .line-box .l1 {
+  transform: skewY(-17deg);
+  top: 700px;
+}
+
+main .line-box .l2 {
+  transform: skewY(15deg);
+  height: 7px;
+  top: 800px;
+}
+
+main .line-box .l3 {
+  transform: skewY(29deg);
+  top: 1793px;
+}
+
+main .line-box .l4 {
+  transform: skewY(-8deg);
+  height: 5px;
+  top: 1877px;
+}
+
+main .line-box .l5 {
+  transform: skewY(-28deg);
+  height: 6px;
+  top: 3120px;
+}
+
+main .line-box .l6 {
+  transform: skewY(-12deg);
+  height: 3px;
+  top: 3039px;
+}
+
+.v2 .v2-ss, .v2 .v2-txt, .v2 h2 {
+  opacity: 0;
+}
+
+.v2 h2 {
+  padding-top: 22px;
+}
+
+.v2.run h2 {
+  animation: b .5s ease-out both;
+}
+
+@keyframes b {
+  0% {opacity: 0; transform: translate(-30px);}
+  100% {opacity: 1; transform: translate(0);}
+}
+
+.v2 .v2-txt {
+  width: 580px;
+  font-size: 21px;
+  line-height: 1.6;
+  margin: -6px auto 0;
+  padding: 10px;
+  background: rgba(0, 4, 59, .6);
+  position: relative;
+}
+
+.v2.run .v2-ss, .v2.run .v2-txt {
+  animation: a .5s .2s ease-out both;
+}
+
+@keyframes a {
+  0% {opacity: 0; transform: translateY(50px);}
+  100% {opacity: 1; transform: translate(0);}
+}
+
+.v2 .v2-ss1 {
+  display: inline-block;
+  margin: 16px 0 0 18px;
+}
+
+.v2 .v2-ss1 .ss-frame1 {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/top/v2_ss_frame_ce05a6fb63e1c8d41a4487cfeebd4c3e.png) top no-repeat;
+  width: 545px;
+  height: 336px;
+  display: block;
+  position: relative;
+}
+
+.v2 .v2-ss1 .ss-frame1::before {
+  background: url(https://meltyblood.typelumina.com/resources/img/top/movie1_label_e3347ade3e687ac03cc7eb55b8d17cc3.png);
+  width: 490px;
+  height: 56px;
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 27px;
+  z-index: 2;
+}
+
+.v2 .v2-ss1 .ss-frame1::after {
+  background: url(https://meltyblood.typelumina.com/resources/img/top/play_e31382cd3e53e2154113ffb3f529138b.png);
+  width: 110px;
+  height: 111px;
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.v2 .v2-ss1 .ss-frame1 #v2-movie1 {
+  width: 472px;
+  height: 264px;
+  position: absolute;
+  top: 36px;
+  left: 38px;
+  pointer-events: none;
+}
+
+.v2 .v2-ss2 {
+  display: inline-block;
+  margin: -8px 0 0 76px;
+}
+
+.v2 .v2-ss2 .ss-frame2 {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/top/v2_ss_frame_ce05a6fb63e1c8d41a4487cfeebd4c3e.png) top no-repeat;
+  width: 545px;
+  height: 336px;
+  display: block;
+  position: relative;
+}
+
+.v2 .v2-ss2 .ss-frame2::before {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/top/movie2_label_cd3854f3e6cd6677f92a6477b956c3dc.png);
+  width: 490px;
+  height: 56px;
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 27px;
+  z-index: 2;
+}
+
+.v2 .v2-ss2 .ss-frame2::after {
+  background: url(https://meltyblood.typelumina.com/resources/img/top/play_e31382cd3e53e2154113ffb3f529138b.png);
+  width: 110px;
+  height: 111px;
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.v2 .v2-ss2 .ss-frame2 #v2-movie2 {
+  width: 472px;
+  height: 264px;
+  position: absolute;
+  top: 35px;
+  left: 37px;
+  pointer-events: none;
+}
+
+.v3 {
+  margin-top: -7px;
+}
+
+.v3 .to-character-btn, .v3 .v3-chara, .v3 .v3-ss1, .v3 .v3-ss2, .v3 .v3-txt, .v3 h2 {
+  opacity: 0;
+}
+
+.v3 .v3-chara {
+  position: absolute;
+  top: 122px;
+  left: 396px;
+  pointer-events: none;
+}
+
+.v3.run .v3-chara {
+  animation: a .5s .2s ease-out both;
+}
+
+.v3 .v3-txt, .v3 h2 {
+  position: relative;
+}
+
+.v3.run h2 {
+  animation: b .5s ease-out both;
+}
+
+.v3 .v3-txt {
+  width: 440px;
+  font-size: 21px;
+  line-height: 1.6;
+  margin: -4px 0 0 20px;
+  padding: 10px;
+  background: rgba(0, 4, 59, .6);
+}
+
+.v3 .to-character-btn, .v3 .v3-ss1, .v3 .v3-ss2 {
+  display: inline-block;
+  position: relative;
+}
+
+.v3 .to-character-btn {
+  margin: 12px 0 0 17px;
+}
+
+.v3 .v3-ss1 {
+  margin: 0 0 0 -9px;
+}
+
+.v3 .v3-ss1 .ss-img {
+  background: url(https://meltyblood.typelumina.com/resources/img/top/v3_ss1_thumb_d5eeb353b0bb6f4d9bcc3193098ed2cb.png) top no-repeat;
+  width: 613px;
+  height: 380px;
+  display: block;
+}
+
+.v3 .v3-ss2 {
+  margin: -10px 0 0 23px;
+}
+
+.v3 .v3-ss2 .ss-img {
+  background: url(https://meltyblood.typelumina.com/resources/img/top/v3_ss2_thumb_46171993f97616cc5a8311b2b8174264.png) top no-repeat;
+  width: 613px;
+  height: 381px;
+  display: block;
+}
+
+.v3.run .to-character-btn, .v3.run .v3-ss1, .v3.run .v3-ss2, .v3.run .v3-txt {
+  animation: a .5s .4s ease-out both;
+}
+
+.v4 {
+  margin-top: 12px;
+  padding-bottom: 51px;
+}
+
+.v4 .to-htp-btn, .v4 .v4-chara, .v4 .v4-txt, .v4 h2 {
+  opacity: 0;
+}
+
+.v4 .v4-chara {
+  position: absolute;
+  top: 4px;
+  left: -69px;
+  pointer-events: none;
+}
+
+.v4.run .v4-chara {
+  animation: a .5s ease-out both;
+}
+
+.v4 h2 {
+  margin-left: 77px;
+  position: relative;
+}
+
+.v4.run h2 {
+  animation: b .5s .2s ease-out both;
+}
+
+.v4 .v4-txt {
+  width: 440px;
+  font-size: 21px;
+  line-height: 1.6;
+  margin: 6px 0 0 160px;
+  padding: 10px;
+  background: rgba(0, 4, 59, .6);
+  position: relative;
+}
+
+.v4 .to-htp-btn {
+  display: inline-block;
+  position: relative;
+  margin: 7px 0 0 190px;
+}
+
+.v4.run .to-htp-btn, .v4.run .v4-txt {
+  animation: a .5s .4s ease-out both;
+}
+
+.v5 {
+  margin-top: -50px;
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/top/v5_bg_247b72bf43884303f7c55113f783253d.png) center 50px no-repeat;
+  background-size: cover;
+  padding-top: 56px;
+}
+
+.v5 .package, .v5 .reserve-btn, .v5 .v5-catch, .v5 .v5-detail, .v5 .h2 {
+  opacity: 0;
+}
+
+.v5 h2 {
+  margin-left: 28px;
+}
+
+.v5 .v5-catch {
+  margin: -9px 0 0 34px;
+}
+
+.v5 .package {
+  width: 625px;
+  height: 469px;
+  margin-top: 28px;
+  margin-left: 7px;
+}
+
+.v5 .package .notes {
+  font-size: 12px;
+  margin: -10px 0 0 135px;
+}
+
+.v5 .package::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 230px;
+  height: 34px;
+  top: -23px;
+  right: 13px;
+  background: url(https://meltyblood.typelumina.com/resources/img/top/price_71e3dcbe37e3c4903b68deddcd5194b1.png);
+}
+
+.v5 .v5-detail {
+  margin: 27px 0 0 11px;
+}
+
+.v5 .reserve-btn {
+  display: inline-block;
+  position: relative;
+  margin: 38px 0 0 103px;
+  padding-bottom: 43px;
+}
+
+.v5.run .package, .v5.run .reserve-btn, .v5.run .v5-catch, .v5.run .v5-detail, .v5.run .h2 {
+  animation: a .5s ease-out both;
+}
+
+.v6 {
+  background: url(https://meltyblood.typelumina.com/resources/img/sp/top/v6_staff_bg_392671397e0b41fcee86cd4399d08612.png) top no-repeat;
+  padding: 49px 0 32px;
+}
+
+.v6 .staff, .v6 h2 {
+  opacity: 0;
+}
+
+.v6 h2 {
+  text-align: center;
+  position: relative;
+}
+
+.v6 .staff {
+  margin: 47px 0 0 6px;
+}
+
+.v6.run .staff, .v6.run h2 {
+  animation: a .5s ease-out both;
+}
+
+.update-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  overflow: auto;
+  z-index: 1001;
+  animation: s .5s ease;
+  transition: opacity .5s ease;
+}
+
+.update-modal .modal-overlay {
+  background: rgba(0, 0, 0, .9);
+  outline: 0;
+}
+
+.update-modal .modal-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+  top: 0;
+}
+
+.update-modal .modal-dialog {
+  width: 420px;
+  background: #040b1e;
+  border: 1px solid #1e2f5a;
+  padding: 25px 15px 50px;
+  box-sizing: border-box;
+  position: absolute;
+  margin: auto;
+  top: 150px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.update-modal .modal-dialog .update-close-btn {
+  background: url(https://meltyblood.typelumina.com/resources/img/common/modal_close_btn_86631998bdc51b9c02f987fa4d5d0228.png);
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: -85px;
+  right: 0;
+}
+
+footer {
+  background: #000;
+  padding: 46px 0;
+  position: relative;
+  z-index: 100;
+  font-family: Helvetica Neue,Helvetica,Arial,ヒラギノ角ゴ ProN W3,Hiragino Kaku Gothic ProN,メイリオ,Meiryo,sans-serif;
+}
+
+footer a, footer p {
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+}
+
+footer .sns-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 31px;
+}
+
+footer .sns-box a {
+  margin: 0 10px;
+}
+
+footer .sns-box .sns-twi-btn {
+  background: url(https://meltyblood.typelumina.com/resources/img/common/sns_twitter_btn_ce13f5f7ba98efec24f652ff23856ca9.png);
+  width: 52px;
+  height: 52px;
+}
+
+footer .sns-box .sns-fb-btn {
+  background: url(https://meltyblood.typelumina.com/resources/img/common/sns_facebook_btn_3a46c0cec37bedd46a9e074db27a4cee.png);
+  width: 53px;
+  height: 53px;
+}
+
+footer .sns-box .sns-line-btn {
+  background: url(https://meltyblood.typelumina.com/resources/img/common/sns_line_btn_972417c0dfa7bce9d83aead929922f0d.png);
+  width: 51px;
+  height: 51px;
+}
+
+footer hr {
+  width: 100vw;
+  height: 2px;
+  margin: 0 0 0 calc(50% - 50vw);
+  background: #292929;
+  border: 0;
+}
+
+footer .logo-box {
+  display: flex;
+  align-items: center;
+  margin: 20px auto 21px;
+}
+
+footer .logo-box picture:first-of-type img {
+  margin: 0 36px 0 20px;
+}
+
+footer .logo-box picture:nth-of-type(2) img {
+  margin-right: 37px;
+}
+
+footer .logo-box picture:nth-of-type(3) img {
+  margin-right: 43px;
+}
+
+footer .age-rating {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+footer .age-rating li:last-of-type {
+  margin-left: 31px;
+}
+
+footer .copyright, footer .remarks {
+  margin-top: 18px;
+  line-height: 1.6;
+}
+
+footer .copyright {
+  padding: 0 20px;
+}
+
+footer .copyright .copy1 {
+  position: relative;
+  top: 3px;
+}
+
+footer .link-box {
+  text-align: center;
+  margin: 15px 0;
+}
+
+footer .link-box a {
+  margin: 0 7px;
+}
+
+footer .bnr-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+footer .bnr-box a {
+  margin: 0 17px 25px;
+}
+
+footer .copyright2 {
+  line-height: 1.8;
+  padding: 0 20px;
+}
+
+.to-top-btn {
+  background: url(https://meltyblood.typelumina.com/resources/img/common/to_top_btn_6244473933c925acbffa73f35729d763.png);
+  width: 78px;
+  height: 78px;
+  display: block;
+  position: absolute;
+  bottom: 740px;
+  right: 20px;
+  z-index: 100;
+  transition: opacity .5s;
+}
+
+.to-top-btn.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.to-top-btn.fixed {
+  position: fixed;
+  bottom: 30px;
+}
+
+#loading {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  position: fixed;
+  z-index: 1000;
+  transition: all .5s ease;
+}
+
+#loading .circle1, #loading .circle2, #loading .loading-txt {
+  position: absolute;
+  margin: auto;
+  right: 0;
+}
+
+#loading .circle1, #loading .circle2 {
+  width: 1280px;
+  height: 1201px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#loading .circle1 {
+  background: url(https://meltyblood.typelumina.com/resources/img/common/circle_base_8db3633fc4f2b9de22f79cc39f9ab32a.png);
+  top: -630px;
+}
+
+#loading .circle2 {
+  background: url(https://meltyblood.typelumina.com/resources/img/common/circle_move_e49fd7bce497b9e1c0769c27e69d29af.png);
+  top: -600px;
+}
+
+#loading .circle2 .circle2-anim {
+  background: url(https://meltyblood.typelumina.com/resources/img/common/circle_move_e49fd7bce497b9e1c0769c27e69d29af.png);
+  width: 1280px;
+  height: 1201px;
+  animation: c 10s linear infinite;
+}
+
+@keyframes c {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(1turn);}
+}
+
+#loading .loading-txt {
+  background: url(https://meltyblood.typelumina.com/resources/img/common/loading_half_4de4367bd41138fa8e35e6b941b1292a.png);
+  width: 140px;
+  height: 19px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  animation: d 2s ease-in infinite;
+}
+
+@keyframes d {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {opacity: 0;}
+}
