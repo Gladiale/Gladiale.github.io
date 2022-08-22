@@ -6,6 +6,17 @@
   <meta name="viewport" content="width=1024">
   <title>MELTY BLOOD: TYPE LUMINA（メルティブラッド：タイプルミナ）公式サイト</title>
   <link rel="stylesheet" href="stylesheet.css">
+  <script>
+    if ((navigator.userAgent.indexOf('iPhone') > -1 && navigator.userAgent.indexOf('iPad') === -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+      if (!(window.location.hash === '')) {
+          location.href = '/sp/' + window.location.hash;
+      } else if(!(window.location.search === '')) {
+          location.href = '/sp/' + window.location.search;
+      } else {
+          location.href = '/sp/';
+      }
+    }
+  </script>
   <link rel="stylesheet" href="./fancybox/jquery.fancybox.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&amp;display=swap" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
